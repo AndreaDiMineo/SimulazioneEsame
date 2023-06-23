@@ -18,36 +18,18 @@ public class Server {
         try {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
-                try {
-                    if (s.equals("all") || s.equals("ALL"))
-                        out.println(Cars.getInstance().toJSON(s));
-                } catch(Exception e){
-                    throw new IOException();
-                }
-                try {
-                    if (s.equals("all_sorted_on_brand") || s.equals("ALL_SORTED_ON_BRAND"))
-                        out.println(Cars.getInstance().toJSON(s));
-                } catch(Exception e){
-                    throw new IOException("Comando errato");
-                }
-                try {
-                    if (s.equals("all_sorted_on_price") || s.equals("ALL_SORTED_ON_PRICE"))
-                        out.println(Cars.getInstance().toJSON(s));
-                } catch(Exception e){
-                    throw new IOException("Comando errato");
-                }
-                try {
-                    if (s.equals("more_expensive") || s.equals("MORE_EXPENSIVE"))
-                        out.println(Cars.getInstance().toJSON(s));
-                } catch(Exception e){
-                    throw new IOException("Comando errato");
-                }
-                try {
-                    if (s.equals(""))
-                        out.println("Comando errato");
-                } catch(Exception e){
-                    throw new IOException("Comando Errato");
-                }
+                if (s.equals("all") || s.equals("ALL"))
+                    out.println(Cars.getInstance().toJSON(s));
+                else if (s.equals("all_sorted_on_brand") || s.equals("ALL_SORTED_ON_BRAND"))
+                    out.println(Cars.getInstance().toJSON(s));
+                else if (s.equals("all_sorted_on_price") || s.equals("ALL_SORTED_ON_PRICE"))
+                    out.println(Cars.getInstance().toJSON(s));
+                else if (s.equals("more_expensive") || s.equals("MORE_EXPENSIVE"))
+                    out.println(Cars.getInstance().toJSON(s));
+                else if (s.equals(""))
+                    out.println("Comando errato");
+                else
+                    out.println("Comando errato");
                 out.flush();
             }
 
