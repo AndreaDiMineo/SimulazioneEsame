@@ -9,7 +9,7 @@ public class Cars {
 
     private static Cars INSTANCE;
 
-    List<Car> cars = new ArrayList<Car>();
+    static List<Car> cars = new ArrayList<Car>();
 
     private Cars() {
         cars.add(new Car(123,"Bmw","X6", 3594.9, 2));
@@ -23,10 +23,6 @@ public class Cars {
         }
 
         return INSTANCE;
-    }
-
-    int sorted(String c1, String c2){
-        return c1.compareTo(c2);
     }
 
     String toJSON(String cmd){
